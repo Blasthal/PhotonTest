@@ -19,7 +19,7 @@ public class manage
 		PhotonNetwork.ConnectUsingSettings(Version);
     }
 
-	void FixedUpdate()
+	void Update()
 	{
 		// 左クリックが押されたら、オブジェクトを読み込む
 		if (Input.GetMouseButtonDown(0) && keyLock)
