@@ -5,6 +5,7 @@ using UnityEngine;
 public class manage
 	: MonoBehaviour
 {
+    private const string Version = "v1.0.0";
 	private bool keyLock = false;
 
 
@@ -15,7 +16,7 @@ public class manage
 		keyLock = false;
 
 		// Photon Realtimeのサーバーへ接続、ロビーへ入室
-		PhotonNetwork.ConnectUsingSettings(null);
+		PhotonNetwork.ConnectUsingSettings(Version);
     }
 
 	void FixedUpdate()
