@@ -35,12 +35,13 @@ public class manage
 			mySyncObjRB.isKinematic = false;
 			float randPow = Random.Range(1.0f, 5.0f);
 			mySyncObjRB.AddForce(Vector3.left * randPow, ForceMode.Impulse);
-		}
+        }
 	}
-#endregion // Unity Method
-	
-	// ロビーに入室した
-	void OnJoinedLobby()
+    #endregion // Unity Method
+
+    #region Photon Method
+    // ロビーに入室した
+    void OnJoinedLobby()
 	{
 		// とりあえずどこかのルームへ入室する
 		PhotonNetwork.JoinRandomRoom();
@@ -63,5 +64,23 @@ public class manage
 		PhotonNetwork.CreateRoom(null);
 	}
 
-	
+    //// Photonのシリアライズ？
+    //void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    //{
+    //    if (stream.isWriting)
+    //    {
+    //        //このプレイヤーを所有している: 他プレイヤーにデータを送信
+    //        //stream.SendNext((int)controllerScript._characterState);
+    //        stream.SendNext(transform.position);
+    //        stream.SendNext(transform.rotation);
+    //    }
+    //    else
+    //    {
+    //        //ネットワークプレイヤー, データを受信
+    //        controllerScript._characterState = (CharacterState)(int)stream.ReceiveNext();
+    //        correctPlayerPos = (Vector3)stream.ReceiveNext();
+    //        correctPlayerRot = (Quaternion)stream.ReceiveNext();
+    //    }
+    //}
+    #endregion // Photon Method
 }
