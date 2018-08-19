@@ -100,9 +100,6 @@ public class UIbattle : MonoBehaviour
             // 0を入力
             variableManage.movingYaxis = 0;
         }
-
-        // デバッグ用　要削除
-        infoText.text = "X : " + variableManage.movingXaxis + " Y : " + variableManage.movingYaxis;
     }
 
     //コンフィグ表示用ボタン
