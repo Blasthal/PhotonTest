@@ -25,7 +25,7 @@ public class manage
 		if (Input.GetMouseButtonDown(0) && keyLock)
 		{
 			GameObject mySyncObj = PhotonNetwork.Instantiate(
-				"Cube"
+				"Character/Cube"
 				, new Vector3(9.0f, 0.0f, 0.0f)
 				, Quaternion.identity
 				, 0
