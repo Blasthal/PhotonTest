@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class manage
+public class Manage
 	: MonoBehaviour
 {
     private const string Version = "v1.0.0";

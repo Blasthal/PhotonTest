@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class variableManage : MonoBehaviour
+public class VariableManage : MonoBehaviour
 {
     // 移動用変数
     static public int movingXaxis;

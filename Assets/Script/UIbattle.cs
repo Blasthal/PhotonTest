@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class UIbattle : MonoBehaviour
 {
@@ -67,38 +68,42 @@ public class UIbattle : MonoBehaviour
             touchStart = false;
         }
 
-        // 移動計算 - X軸
-        if ((startXpos - currentXpos) < (Screen.width * -0.05f))
+        // モバイル時のみ動作
+        if (Application.isMobilePlatform)
         {
-            // 右を入力
-            variableManage.movingXaxis = -1;
-        }
-        else if ((startXpos - currentXpos) > (Screen.width * 0.05f))
-        {
-            // 左を入力
-            variableManage.movingXaxis = 1;
-        }
-        else
-        {
-            // 0を入力
-            variableManage.movingXaxis = 0;
-        }
+            // 移動計算 - X軸
+            if ((startXpos - currentXpos) < (Screen.width * -0.05f))
+            {
+                // 右を入力
+                VariableManage.movingXaxis = -1;
+            }
+            else if ((startXpos - currentXpos) > (Screen.width * 0.05f))
+            {
+                // 左を入力
+                VariableManage.movingXaxis = 1;
+            }
+            else
+            {
+                // 0を入力
+                VariableManage.movingXaxis = 0;
+            }
 
-        // 移動計算 - Y軸
-        if ((startYpos - currentYpos) < (Screen.height * -0.08f))
-        {
-            // 上を入力
-            variableManage.movingYaxis = 1;
-        }
-        else if ((startYpos - currentYpos) > (Screen.height * 0.08f))
-        {
-            // 下を入力
-            variableManage.movingYaxis = -1;
-        }
-        else
-        {
-            // 0を入力
-            variableManage.movingYaxis = 0;
+            // 移動計算 - Y軸
+            if ((startYpos - currentYpos) < (Screen.height * -0.08f))
+            {
+                // 上を入力
+                VariableManage.movingYaxis = 1;
+            }
+            else if ((startYpos - currentYpos) > (Screen.height * 0.08f))
+            {
+                // 下を入力
+                VariableManage.movingYaxis = -1;
+            }
+            else
+            {
+                // 0を入力
+                VariableManage.movingYaxis = 0;
+            }
         }
     }
 
@@ -118,6 +123,7 @@ public class UIbattle : MonoBehaviour
     //メインメニューへ戻る
     public void returnMainMenu()
     {
-        Application.LoadLevel("mainMenu");
+        //Application.LoadLevel("mainMenu");
+        SceneManager.LoadScene("mainMenu");
     }
 }
