@@ -12,10 +12,20 @@ public class CharactreMove
 
     // オブジェクト格納
     public Rigidbody myRigid;
-
+    public PhotonView myPV;
+    public Camera myCam;
 
     private void Start()
     {
+        // 自分が読み込んだオブジェクトではない場合
+        if (!myPV.isMine)
+        {
+            myRigid.isKinematic = true;
+            myCam.transform.gameObject.SetActive(false);
+
+            // このスクリプトは破棄する
+            Destroy(this);
+        }
     }
 
     private void Update()
