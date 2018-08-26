@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5545806, g: 0.53009474, b: 0.4206573, a: 1}
+  m_IndirectSpecularColor: {r: 0.55640775, g: 0.5296251, b: 0.42143217, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -160,6 +160,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11452336, guid: 6900d8c84143b2f4b82b75611cd27e7f, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 424160, guid: 6900d8c84143b2f4b82b75611cd27e7f, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -196,9 +200,35 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: -51.5
       objectReference: {fileID: 0}
+    - target: {fileID: 11452336, guid: 6900d8c84143b2f4b82b75611cd27e7f, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11452336, guid: 6900d8c84143b2f4b82b75611cd27e7f, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11452336, guid: 6900d8c84143b2f4b82b75611cd27e7f, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1269869618}
+    - target: {fileID: 11452336, guid: 6900d8c84143b2f4b82b75611cd27e7f, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: fireWep
+      objectReference: {fileID: 0}
+    - target: {fileID: 11452336, guid: 6900d8c84143b2f4b82b75611cd27e7f, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6900d8c84143b2f4b82b75611cd27e7f, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1269869618 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11452868, guid: 6900d8c84143b2f4b82b75611cd27e7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1197047855}
+  m_Script: {fileID: 11500000, guid: 855b2fe60764d334094576ce9a161e2b, type: 3}
 --- !u!1 &1387526076
 GameObject:
   m_ObjectHideFlags: 0
