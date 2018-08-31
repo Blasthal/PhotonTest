@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 114784924695483068}
   m_Layer: 8
   m_Name: t01
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4082,6 +4082,7 @@ MonoBehaviour:
   maxSpd: 30
   cornering: 1
   basePower: 2
+  maxHealth: 10000
   myRigid: {fileID: 54629369645578406}
   myPV: {fileID: 114847476680061440}
   myCam: {fileID: 20134912535594630}
@@ -4168,6 +4169,8 @@ MonoBehaviour:
   wep01name: Misc/mainShell
   myPV: {fileID: 114847476680061440}
   fireMouse: {fileID: 1131235210879390}
+  xRotObject: {fileID: 154164}
+  yRotObject: {fileID: 119220}
 --- !u!114 &114847476680061440
 MonoBehaviour:
   m_ObjectHideFlags: 1

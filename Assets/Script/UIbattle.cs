@@ -105,6 +105,10 @@ public class UIbattle : MonoBehaviour
                 VariableManage.movingYaxis = 0;
             }
         }
+
+        // 画面表示
+        healthText.text = "HP:" + VariableManage.currentHealth;
+        //
     }
 
     //コンフィグ表示用ボタン
