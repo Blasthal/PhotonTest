@@ -4245,6 +4245,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myAnimator: {fileID: 9532102}
   mySmoke: {fileID: 1986268831325450}
+  yRotObj: {fileID: 488078}
+  xRotObj: {fileID: 436544}
 --- !u!114 &114847476680061440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4266,6 +4268,7 @@ MonoBehaviour:
   ownershipTransfer: 0
   ObservedComponents:
   - {fileID: 114757995890596678}
+  - {fileID: 114789366560396666}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1

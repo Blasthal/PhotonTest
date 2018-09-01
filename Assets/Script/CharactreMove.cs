@@ -110,12 +110,6 @@ public class CharactreMove
                     , transform.rotation.eulerAngles.y
                     , zAngle)
                     );
-
-
-
-
-
-
         }
     }
 

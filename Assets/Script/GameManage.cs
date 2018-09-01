@@ -44,9 +44,10 @@ public class GameManage
     private void OnJoinedRoom()
     {
         // オブジェクトを読み込み
-        GameObject myPlayer = PhotonNetwork.Instantiate(
+        //GameObject myPlayer = PhotonNetwork.Instantiate(
+        PhotonNetwork.Instantiate(
             "character/t01"
-            , new Vector3(440.0f, 30.0f, -560.0f)
+            , new Vector3(440.0f, 15.0f, -560.0f)
             , Quaternion.identity
             , 0
             );
