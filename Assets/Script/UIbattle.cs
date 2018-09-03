@@ -107,7 +107,11 @@ public class UIbattle : MonoBehaviour
         }
 
         // 画面表示
-        healthText.text = "HP:" + VariableManage.currentHealth;
+        string text = "HP:" + VariableManage.currentHealth;
+        // ★敵味方のチーム分けが分かりづらいのでテキトーに判別できる文字列を出す
+        text += ",T:" + VariableManage.myTeamID;
+        healthText.text = text;
+
         //
     }
 

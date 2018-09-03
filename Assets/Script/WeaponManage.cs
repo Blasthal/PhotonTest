@@ -72,7 +72,7 @@ public class WeaponManage
             {
                 lockCalcTimer = 0.0f;
                 // ターゲット格納（暫定的に全オブジェクトを対象）
-                GameObject[] allEnemy = GameObject.FindGameObjectsWithTag("Player");
+                GameObject[] allEnemy = GameObject.FindGameObjectsWithTag("Enemy");
                 // ロックオンを解除する
                 VariableManage.lockoned = false;
 
@@ -159,12 +159,13 @@ public class WeaponManage
                         , Quaternion.Euler(new Vector3(0.0f, yAngl, 0.0f))
                         , 0.01f
                         );
-                xRotObject.transform.localRotation =
-                    Quaternion.Slerp(
-                        xRotObject.transform.localRotation
-                        , Quaternion.Euler(new Vector3(xAngl, 0.0f, 0.0f))
-                        , 0.01f
-                        );
+                // X軸回転は処理が怪しいので不適用
+                //xRotObject.transform.localRotation =
+                //    Quaternion.Slerp(
+                //        xRotObject.transform.localRotation
+                //        , Quaternion.Euler(new Vector3(xAngl, 0.0f, 0.0f))
+                //        , 0.01f
+                //        );
             }
             else
             {

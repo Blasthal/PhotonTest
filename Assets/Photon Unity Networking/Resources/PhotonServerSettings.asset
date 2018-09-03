@@ -37,4 +37,6 @@ MonoBehaviour:
   - RequestForPickupItems
   - RequestForPickupTimes
   - fireBullet
+  - allocateTeam
+  - SyncMyID
   DisableAutoOpenWizard: 1

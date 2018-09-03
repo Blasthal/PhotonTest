@@ -15,6 +15,8 @@ public class VariableManage : MonoBehaviour
     static public float currentHealth;
     // ほか
     static public bool controlLock;
+    // ゲーム管理用変数
+    static public int myTeamID;
 
 
     private void Start()
@@ -30,6 +32,7 @@ public class VariableManage : MonoBehaviour
         fireWeapon = false;
         lockoned = false;
         controlLock = false;
+        myTeamID = 0;
         // 試合開始直後に破損しないよう0にしない
         currentHealth = 10.0f;
     }
