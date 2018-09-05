@@ -16,6 +16,9 @@ public class GameManage
     public int myTeamID;
     private float tagTimer;
 
+    // スタート地点用
+    private Vector2 myStartPos;
+
     // ほか
     private bool loadOnce;
 
@@ -28,6 +31,21 @@ public class GameManage
         loadOnce = false;
         scenePV = PhotonView.Get(this.gameObject);
         tagTimer = 0.0f;
+
+        // スタート地点計算
+        Vector2 rndPos = Vector2.zero;
+        while (true)
+        {
+            rndPos = Random.insideUnitCircle * 150.0f;
+            if (rndPos.x < -20.0f)
+            {
+                if (20.0f < rndPos.y)
+                {
+                    break;
+                }
+            }
+        }
+        myStartPos = new Vector2((592.0f + rndPos.x), (-592 + rndPos.y));
 
         // Photon Realtime のサーバーへ接続（ロビーへ入出）
         PhotonNetwork.ConnectUsingSettings(null);
@@ -42,9 +60,13 @@ public class GameManage
             if (!loadOnce && myTeamID != 0)
             {
                 loadOnce = true;
+                if (myTeamID == 2)
+                {
+                    myStartPos = myStartPos * -1.0f;
+                }
                 GameObject myPlayer = PhotonNetwork.Instantiate(
                     "character/t01"
-                    , new Vector3(440.0f, 15.0f, -560.0f)
+                    , new Vector3(myStartPos.x, 24.0f, myStartPos.y)
                     , Quaternion.identity
                     , 0
                     );
