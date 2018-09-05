@@ -141,4 +141,18 @@ public class UIbattle : MonoBehaviour
         VariableManage.fireWeapon = true;
     }
 
+    // マップ表示切り替えボタン
+    public void ShowMap()
+    {
+        if (VariableManage.mapEnabled)
+        {
+            mapUIobj.SetActive(false);
+            VariableManage.mapEnabled = false;
+        }
+        else
+        {
+            mapUIobj.SetActive(true);
+            VariableManage.mapEnabled = true;
+        }
+    }
 }

@@ -66,7 +66,7 @@ public class GameManage
                 }
                 GameObject myPlayer = PhotonNetwork.Instantiate(
                     "character/t01"
-                    , new Vector3(myStartPos.x, 24.0f, myStartPos.y)
+                    , new Vector3(myStartPos.x, 15.0f, myStartPos.y)
                     , Quaternion.identity
                     , 0
                     );

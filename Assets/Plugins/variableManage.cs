@@ -17,6 +17,7 @@ public class VariableManage : MonoBehaviour
     static public bool controlLock;
     // ゲーム管理用変数
     static public int myTeamID;
+    static public bool mapEnabled;
 
 
     private void Start()
@@ -33,6 +34,7 @@ public class VariableManage : MonoBehaviour
         lockoned = false;
         controlLock = false;
         myTeamID = 0;
+        mapEnabled = false;
         // 試合開始直後に破損しないよう0にしない
         currentHealth = 10.0f;
     }
