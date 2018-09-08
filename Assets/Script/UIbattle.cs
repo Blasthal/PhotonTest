@@ -18,6 +18,9 @@ public class UIbattle : MonoBehaviour
     //オブジェクト格納
     public GameObject returnMenu;
     public GameObject mapUIobj;
+    public GameObject winLoseBase;
+    public GameObject winText;
+    public GameObject loseText;
 
     // 仮想操作パッド関連
     private float currentXpos;
@@ -26,14 +29,19 @@ public class UIbattle : MonoBehaviour
     private float startYpos;
     private bool touchStart;
 
+    // その他
+    private float messageTimer;
+
     void Start()
     {
         currentXpos = 0.0f;
         currentYpos = 0.0f;
         touchStart = false;
+        messageTimer = 0.0f;
+        infoText.text = "";
     }
 
-    void Update()
+void Update()
     {
         // 仮想操作パッド
         // 位置取得関連
@@ -112,7 +120,56 @@ public class UIbattle : MonoBehaviour
         text += ",T:" + VariableManage.myTeamID;
         healthText.text = text;
 
-        //
+        timerText.text = Mathf.Round(VariableManage.timeRest).ToString();
+
+        if (VariableManage.myTeamID == 1)
+        {
+            blueTeamText.text = "D" + VariableManage.team1Rest + "_L" + VariableManage.base1Rest;
+            redTeamText.text = "D" + VariableManage.team2Rest + "_L" + VariableManage.base2Rest;
+        }
+        else
+        {
+            blueTeamText.text = "D" + VariableManage.team2Rest + "_L" + VariableManage.base2Rest;
+            redTeamText.text = "D" + VariableManage.team1Rest + "_L" + VariableManage.base1Rest;
+        }
+
+        // 画面表示（メッセージ）
+        if (VariableManage.infomationMessage != 0)
+        {
+            if (VariableManage.infomationMessage == 1)
+            {
+                infoText.text = "味方が撃破されました";
+            }
+            else if (VariableManage.infomationMessage == 2)
+            {
+                infoText.text = "敵を撃破しました";
+            }
+            VariableManage.infomationMessage = 0;
+            messageTimer = 3.0f;
+        }
+        if (messageTimer > 0.0f)
+        {
+            // ３秒後にメッセージを削除
+            messageTimer -= Time.deltaTime;
+            if (messageTimer <= 0.0f)
+            {
+                infoText.text = "";
+            }
+        }
+
+        // 勝敗用
+        if (VariableManage.finishedGame)
+        {
+            if (VariableManage.myTeamID == VariableManage.gameResult)
+            {
+                winText.SetActive(true);
+            }
+            else
+            {
+                loseText.SetActive(true);
+            }
+            winLoseBase.SetActive(true);
+        }
     }
 
     //コンフィグ表示用ボタン

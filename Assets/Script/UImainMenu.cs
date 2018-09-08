@@ -29,6 +29,8 @@ public class UImainMenu
 
     public void jumpBattleScene()
     {
+        VariableManage.initializeVariable();
+
         //Application.LoadLevel("battle");
         SceneManager.LoadScene("battle");
     }

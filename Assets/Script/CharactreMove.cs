@@ -173,4 +173,25 @@ public class CharactreMove
             hitObject = collision.gameObject;
         }
     }
+
+    // 再出撃時の復帰位置を計算
+    Vector3 MyRespawnPos()
+    {
+        Vector2 rndPos = Vector2.zero;
+        while (true)
+        {
+            rndPos = Random.insideUnitCircle * 150.0f;
+            if (rndPos.x < -20.0f) { if (20.0f < rndPos.y) { break; } }
+        }
+
+        Vector3 returnPos = new Vector3((592.0f + rndPos.x), 0.0f, (-592.0f + rndPos.y));
+        if (VariableManage.myTeamID == 2)
+        {
+            returnPos *= -1.0f;
+        }
+
+        returnPos = new Vector3(returnPos.x, 15.0f, returnPos.z);
+
+        return returnPos;
+    }
 }

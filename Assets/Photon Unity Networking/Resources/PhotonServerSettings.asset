@@ -39,4 +39,8 @@ MonoBehaviour:
   - fireBullet
   - allocateTeam
   - SyncMyID
+  - SendCurrentStatus
+  - SendDestruction
+  - SyncFinished
+  - SendDestructionAll
   DisableAutoOpenWizard: 1

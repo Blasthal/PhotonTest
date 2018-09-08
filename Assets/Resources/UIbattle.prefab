@@ -1255,6 +1255,9 @@ MonoBehaviour:
   returnText: {fileID: 11455054}
   returnMenu: {fileID: 190018}
   mapUIobj: {fileID: 105504}
+  winLoseBase: {fileID: 110278}
+  winText: {fileID: 193152}
+  loseText: {fileID: 124548}
 --- !u!114 &11454108
 MonoBehaviour:
   m_ObjectHideFlags: 1
