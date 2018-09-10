@@ -84,6 +84,7 @@ public class GameManage
                 myRoomHash["time"] = PhotonNetwork.time.ToString();
                 PhotonNetwork.room.SetCustomProperties(myRoomHash);
                 countStart = true;
+                VariableManage.startTime = VariableManage.timeRest;
             }
             else if (!countStart)
             {
@@ -111,6 +112,8 @@ public class GameManage
 
                     VariableManage.timeRest = VariableManage.timeRest - Mathf.Round(svT - stT);
                     countStart = true;
+
+                    VariableManage.startTime = VariableManage.timeRest;
                 }
             }
 
@@ -290,6 +293,21 @@ public class GameManage
                 // 5秒後に移動
                 if (shiftTimer > 5.0f)
                 {
+                    shiftTimer = 0.0f;
+
+                    // 経験値計算
+                    if (VariableManage.myTeamID == VariableManage.gameResult)
+                    {
+                        // 自分のチームが勝利
+                        VariableManage.currentExp += Mathf.RoundToInt(VariableManage.startTime * 0.4f);
+                    }
+                    else
+                    {
+                        // 自分のチームが敗北
+                        VariableManage.currentExp += Mathf.RoundToInt(VariableManage.startTime * 0.15f);
+                    }
+                    //
+
                     PhotonNetwork.Disconnect();
                     //Application.LoadLevel("mainMenu");
                     SceneManager.LoadScene("mainMenu");

@@ -20,6 +20,7 @@ public class VariableManage : MonoBehaviour
     static public bool mapEnabled;
     static public GameObject team1baseBullet;
     static public GameObject team2baseBullet;
+    static public float startTime;
     // 勝敗用変数
     static public bool finishedGame; // 勝敗が確定されたか
     static public int team1Rest; // チーム1の残り撃破数
@@ -30,6 +31,11 @@ public class VariableManage : MonoBehaviour
     static public int gameResult; // 1-teamID=1の勝利、2-teamID=2の勝利
     // 画面表示用変数
     static public int infomationMessage;
+    // プレイヤーの情報
+    static public int currentExp = 0;
+    static public int nextExp = 100;
+    static public int currentLv = 1;
+    static public bool showLvupMes = false;
 
 
     private void Start()
